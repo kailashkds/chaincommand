@@ -3,12 +3,21 @@
 namespace BarBundle;
 
 use BarBundle\DependencyInjection\BarExtension;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+/**
+ * BarBundle is a class that extends the Symfony Bundle class.
+ * It is responsible for building the container and registering the BarExtension.
+ */
 class BarBundle extends Bundle
 {
-    public function build(ContainerBuilder $container)
+    /**
+     * Registers the extension to load services and configuration.
+     *
+     * @param ContainerBuilder $container the container builder
+     */
+    public function build(ContainerBuilder $container): void
     {
         parent::build($container);
 
@@ -16,4 +25,3 @@ class BarBundle extends Bundle
         $container->registerExtension(new BarExtension());
     }
 }
-

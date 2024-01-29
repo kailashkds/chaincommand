@@ -5,11 +5,18 @@ namespace ChainCommandBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
-
+/**
+ * Class Configuration.
+ *
+ * This class is responsible for defining the configuration structure for the ChainCommandBundle.
+ * It implements the ConfigurationInterface.
+ */
 class Configuration implements ConfigurationInterface
 {
     /**
-     * {@inheritdoc}
+     * Returns the configuration tree builder for the ChainCommandBundle.
+     *
+     * @return TreeBuilder the configuration tree builder
      */
     public function getConfigTreeBuilder(): TreeBuilder
     {
@@ -27,6 +34,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
             ->end();
+
         return $treeBuilder;
     }
 }

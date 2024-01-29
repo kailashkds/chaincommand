@@ -1,0 +1,4 @@
+chain_command:
+  chains:
+    foo:hello:  # root command name
+      - bar:hi:  # member command name

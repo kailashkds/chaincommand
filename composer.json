@@ -11,10 +11,12 @@
         "symfony/dotenv": "6.4.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.4.*",
+        "symfony/monolog-bundle": "^3.10",
         "symfony/runtime": "6.4.*",
         "symfony/yaml": "6.4.*"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.52"
     },
     "config": {
         "allow-plugins": {
@@ -26,7 +28,10 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "ChainCommandBundle\\": "Bundle/ChainCommandBundle",
+            "FooBundle\\": "Bundle/FooBundle",
+            "BarBundle\\": "Bundle/BarBundle"
         }
     },
     "autoload-dev": {

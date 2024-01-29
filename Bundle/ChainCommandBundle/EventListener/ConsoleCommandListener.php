@@ -30,6 +30,7 @@ class ConsoleCommandListener
     public function onConsoleCommand(ConsoleCommandEvent $event): void
     {
         $command = $event->getCommand();
+
         if ($chain = $this->chainCommandManager->getParentCommand($command->getName())) {
             $this->executeAllChainCommands($event, $command, $chain);
 
@@ -43,7 +44,7 @@ class ConsoleCommandListener
                 $command->getName(),
                 $chain->getParentCommand()
             ));
-            throw new RuntimeException(sprintf('%s command is a member of %s command chain and cannot be executed on its own.', $command->getName(), $chain->getParentCommand()));
+            throw new RuntimeException(sprintf('Error: %s command is a member of %s command chain and cannot be executed on its own.', $command->getName(), $chain->getParentCommand()));
             // Prevent the original command from being executed
             $event->disableCommand();
         }
